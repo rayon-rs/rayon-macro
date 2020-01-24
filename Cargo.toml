@@ -1,0 +1,21 @@
+[package]
+name = "rayon-macro"
+version = "0.1.0"
+authors = ["Josh Stone <cuviper@gmail.com>"]
+description = "Macros enabling parallelism using the rayon crate"
+readme = "README.md"
+license = "Apache-2.0 OR MIT"
+repository = "https://github.com/rayon-rs/rayon-macro"
+documentation = "https://docs.rs/rayon-macro/"
+keywords = ["parallel", "thread", "concurrency", "join", "performance"]
+categories = ["concurrency"]
+edition = "2018"
+exclude = ["bors.toml", ".travis.yml"]
+
+[workspace]
+members = ["hack"]
+
+[dependencies]
+rayon-macro-hack = { version = "=0.1.0", path = "hack" }
+proc-macro-hack = "0.5.9"
+rayon = "1.3"
