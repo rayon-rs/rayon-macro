@@ -10,7 +10,7 @@ documentation = "https://docs.rs/rayon-macro/"
 keywords = ["parallel", "thread", "concurrency", "join", "performance"]
 categories = ["concurrency"]
 edition = "2018"
-exclude = ["bors.toml", ".travis.yml"]
+exclude = ["bors.toml", ".github/*"]
 
 [workspace]
 members = ["hack"]
