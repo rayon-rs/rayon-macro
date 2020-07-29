@@ -2,7 +2,7 @@
 
 [![rayon-macro crate](https://img.shields.io/crates/v/rayon-macro.svg)](https://crates.io/crates/rayon-macro)
 [![rayon-macro documentation](https://docs.rs/rayon-macro/badge.svg)](https://docs.rs/rayon-macro)
-![minimum rustc 1.31](https://img.shields.io/badge/rustc-1.31+-red.svg)
+![minimum rustc 1.45](https://img.shields.io/badge/rustc-1.45+-red.svg)
 ![build status](https://github.com/rayon-rs/rayon-macro/workflows/master/badge.svg)
 
 The `rayon-macro` crate provides procedural macros to make it easier to
@@ -27,7 +27,7 @@ It will be expanded to something like this:
 
 Control-flow expressions in the body will also be transformed as needed.
 
-This crate currently requires `rustc 1.31.0` or greater.
+This crate currently requires `rustc 1.45.0` or greater.
 
 ## License
 

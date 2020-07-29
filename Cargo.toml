@@ -1,6 +1,6 @@
 [package]
 name = "rayon-macro"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Josh Stone <cuviper@gmail.com>"]
 description = "Macros enabling parallelism using the rayon crate"
 readme = "README.md"
@@ -12,10 +12,14 @@ categories = ["concurrency"]
 edition = "2018"
 exclude = ["bors.toml", ".github/*"]
 
-[workspace]
-members = ["hack"]
+[lib]
+proc-macro = true
 
 [dependencies]
-rayon-macro-hack = { version = "=0.1.0", path = "hack" }
-proc-macro-hack = "0.5.9"
+proc-macro-crate = "0.1"
+proc-macro2 = "1"
+quote = "1"
+syn = { version = "1", features = ["fold", "full"] }
+
+[dev-dependencies]
 rayon = "1.3"
