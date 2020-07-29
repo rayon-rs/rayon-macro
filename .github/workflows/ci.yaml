@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        rust: [1.31.0, stable, beta, nightly]
+        rust: [1.45.0, stable, beta, nightly]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -23,7 +23,7 @@ jobs:
           profile: minimal
           override: true
       - name: Prepare Cargo.lock
-        if: matrix.rust == '1.31.0'
+        if: matrix.rust == '1.45.0'
         run: cp .github/compat-Cargo.lock ./Cargo.lock
       - name: Build
         uses: actions-rs/cargo@v1
@@ -46,7 +46,7 @@ jobs:
         uses: actions-rs/toolchain@v1
         with:
           profile: minimal
-          toolchain: 1.40.0
+          toolchain: 1.45.0
           override: true
           components: rustfmt
       - name: Check formatting
