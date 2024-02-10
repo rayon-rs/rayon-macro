@@ -16,10 +16,10 @@ exclude = ["bors.toml", ".github/*"]
 proc-macro = true
 
 [dependencies]
-proc-macro-crate = "0.1"
+proc-macro-crate = "1.2.1"
 proc-macro2 = "1"
 quote = "1"
-syn = { version = "1", features = ["fold", "full"] }
+syn = { version = "2", features = ["fold", "full"] }
 
 [dev-dependencies]
 rayon = "1.3"

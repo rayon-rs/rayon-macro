@@ -1,6 +1,6 @@
 use proc_macro::TokenStream;
 use proc_macro2::{Ident, Span};
-use proc_macro_crate::crate_name;
+use proc_macro_crate::{crate_name, FoundCrate};
 use quote::quote;
 use syn::fold::{self, Fold};
 use syn::parse_macro_input;
@@ -34,7 +34,10 @@ pub fn parallel(input: TokenStream) -> TokenStream {
     let body = transform.fold_block(body);
 
     let rayon_crate = crate_name("rayon").expect("rayon is present in `Cargo.toml`");
-    let rayon = Ident::new(&rayon_crate, Span::call_site());
+    let rayon = match rayon_crate {
+        FoundCrate::Name(name) => Ident::new(&name, Span::call_site()),
+        FoundCrate::Itself => panic!("expected a crate name"),
+    };
 
     TokenStream::from(quote! {
         ::#rayon::iter::ParallelIterator::for_each(
